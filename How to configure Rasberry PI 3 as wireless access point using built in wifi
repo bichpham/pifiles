@@ -1,5 +1,8 @@
 How to configure Rasberry PI 3 as wireless access point using built in wifi
+
+
 1.	sudo apt-get install hostapd -y
+5.	sudo apt-get install bridge-utils -y
 2.	sudo nano /etc/dhcpcd.conf
 a.	add “denyinterfaces wlan0”  to the end
 3.	sudo nano /etc/default/hostapd
@@ -22,7 +25,6 @@ ieee80211n=1
 wme_enabled=1
 bridge=br0
 
-5.	sudo apt-get install bridge-utils -y
 6.	sudo nano /etc/network/interfaces. Add the following line
 auto br0
  iface br0 inet dhcp
